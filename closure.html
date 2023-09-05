@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>closure</title>
+  </head>
+  <body>
+    <ul class="list">
+      <li>apple</li>
+      <li>pear</li>
+      <li>peach</li>
+      <li>lemon</li>
+    </ul>
+    <!-- 利用闭包来解决异步函数中变量丢失的问题。setTimeout同理 -->
+    <!-- 怎么看闭包？source-scope里有无closure -->
+    <script>
+      var list = document.querySelector(".list").querySelectorAll("li");
+
+         //全是4
+     /*  for (var i = 0; i < list.length; i++) {
+        list[i].onclick = function () {
+          console.log(i);
+        };
+      } */
+
+        //在for循环里单独设置变量记录下i防止遗忘
+        for (var i = 0; i < list.length; i++) {
+          list[i].abc = i; //给一个node动态添加属性（这一步并不异步）
+          list[i].onclick = function () {
+            console.log(this); //this 指向<li>
+            console.log(i);
+            console.log(this.abc); // 在abc属性中寻找被遗忘的i
+          };
+        }
+
+      //利用闭包记录list的索引值i
+      //立即执行函数又被称为小闭包因为里面的任何函数都可以使用他的参数变量
+      /* for (var i = 0; i < list.length; i++) {
+        (function (i) {
+          list[i].onclick = function () {
+            console.log(i);
+          };
+        })(i);
+      } */
+    </script>
+  </body>
+</html>
