@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Document</title>
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img src="./pics/mt1.jpg" /><img src="./pics/mt2.jpg" /><img
+          src="./pics/mt3.jpg"
+        /><img src="./pics/mt4.jpg" />
+      </div>
+      <div class="formContainer">
+        <form action="#">
+          <div class="column flavor">
+            <legend class="title">奶茶口味：</legend>
+            <span>
+              <input type="radio" name="flavor" id="ynbb" />淤泥波波
+              <input type="radio" name="flavor" id="zztt" />芝芝桃桃
+              <input type="radio" name="flavor" id="drpt" />多肉葡萄
+            </span>
+          </div>
+          <div class="column quantity">
+            <legend class="title">几杯：</legend>
+            <span> <input type="text" name="quanlity" /></span>
+          </div>
+          <div class="column glass">
+            <legend class="title">杯型：</legend>
+            <span
+              ><input type="radio" name="glass" id="xxl" />超大杯
+              <input type="radio" name="glass" id="xl" />大杯
+              <input type="radio" name="glass" id="md" />中杯</span
+            >
+          </div>
+          <div class="column sweet">
+            <legend class="title">甜度：</legend>
+            <span
+              ><select name="sweet">
+                <option value="none">无糖</option>
+                <option value="thirdTen">三分</option>
+                <option value="fifthTen">五分</option>
+                <option value="full">全糖</option>
+              </select></span
+            >
+          </div>
+          <div class="column freeTopping">
+            <legend class="title">免费小料：</legend>
+            <span
+              >波霸<input type="checkbox" name="freeTopping" id="bb" />
+              椰果<input type="checkbox" name="freeTopping" id="yg" />
+              西米露<input type="checkbox" name="freeTopping" id="xml" />
+              茶冻<input type="checkbox" name="freeTopping" id="cd" />
+              红豆<input type="checkbox" name="freeTopping" id="hd" />
+              仙草<input type="checkbox" name="freeTopping" id="xc"
+            /></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
