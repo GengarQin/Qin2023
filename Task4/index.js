@@ -31,21 +31,31 @@ function keydown(e){
     let valueUp = Number(rawTopValue.slice(0,rawTopValue.length-2))-1*Number(speed.value) + 'px';   
     pic.style.top = valueUp;     
     localStorage.setItem('top',valueUp);
+    pic.style.transform = "rotate(-90deg)";
+    localStorage.setItem("transform","rotate(-90deg)");
     break;
     case 40:
     let valueDown = Number(rawTopValue.slice(0,rawTopValue.length-2)) +1*Number(speed.value) + 'px';
     pic.style.top = valueDown;
     localStorage.setItem('top',valueDown);
+    pic.style.transform = "rotate(90deg)";
+    localStorage.setItem("transform","rotate(90deg)");
+
     break;
     case 37: 
     let valueLeft = Number(rawLeftValue.slice(0,rawLeftValue.length-2))-1*Number(speed.value) + 'px';
     pic.style.left = valueLeft;
     localStorage.setItem('left',valueLeft);
+    pic.style.transform = "scale(-1,1)";
+    localStorage.setItem("transform","scale(-1,1)");
+
     break;
     case 39: 
     let valueRight = Number(rawLeftValue.slice(0,rawLeftValue.length-2))+1*Number(speed.value) + 'px';
     pic.style.left = valueRight;
     localStorage.setItem('left',valueRight);
+    pic.style.transform = "rotate(0deg)";
+    localStorage.setItem("transform","rotate(0deg)");
     break;
     }
 }
@@ -60,5 +70,6 @@ function setStyles(){
     pic.src = "./pics/car"+ vehicle.value +".png"
     pic.style.top = localStorage.top;
     pic.style.left = localStorage.left;
+    pic.style.transform = localStorage.transform;
 }
 
